@@ -1,20 +1,19 @@
 ﻿#include <iostream>
 #include <ctime>
 #include <map>
-#include <windows.h>
+#include <cmath>
 
 using namespace std;
 
-string generateRandomString(int length, string literals);
+string generateRandomString(int length, string alphabet);
 
 void createHistogram(string str);
 
 void calculateAverageTime(int str_len, int literal_size);
 
 void main() {
-	SetConsoleOutputCP(CP_UTF8);
-	setlocale(LC_ALL, "");
-	string literals = "0123456789";
+	setlocale(LC_ALL, "ru");
+	string alphabet = "0123456789";
 	int length;
 	cout << "Ввебите длину пароля (100макс.): ";
 	cin >> length;
@@ -23,18 +22,18 @@ void main() {
 		cout << "неверный ввод";
 		return;
 	}
-	string random_str = generateRandomString(length, literals);
+	string random_str = generateRandomString(length, alphabet);
 	cout << random_str;
 	createHistogram(random_str);
-	calculateAverageTime(length, literals.size());
+	calculateAverageTime(length, alphabet.size());
 	return;
 }
 
-string generateRandomString(int length, string literals) {
+string generateRandomString(int length, string alphabet) {
 	string result;
 	srand(time(0));
 	for (int i = 0; i < length; i++) {
-		result += literals[rand() % literals.length()];
+		result += alphabet[rand() % alphabet.length()];
 	}
 	return result;
 }
@@ -57,12 +56,12 @@ void createHistogram(string str) {
 	}
 }
 
-void calculateAverageTime(int str_len, int literal_size) {
-	for (int i = 0; i < str_len; i++)
+void calculateAverageTime(int str_len, int alphabet_size) {
+	for (int i = 1; i <= str_len; i++)
 	{
 		long double combinationCounter = 0;
-		for (int j = 0; j < i; j++) {
-			combinationCounter += pow(literal_size, j);
+		for (int j = 0; j <= i; j++) {
+			combinationCounter += pow(alphabet_size, j);
 		}
 		long double averageTime = combinationCounter / (2 * 1000000);
 		cout << "Среднее время подбора пароля методом перебора длины " << i << " составило: " << averageTime << 'с' << std::endl;

@@ -1,5 +1,5 @@
 ﻿  password.cpp
 D:\Университет\Университет\3 курс актуально\SIMZIIS\lab1\lab1\password.cpp(14,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-D:\Университет\Университет\3 курс актуально\SIMZIIS\lab1\lab1\password.cpp(29,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Университет\Университет\3 курс актуально\SIMZIIS\lab1\lab1\password.cpp(35,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\Университет\Университет\3 курс актуально\SIMZIIS\lab1\lab1\password.cpp(28,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Университет\Университет\3 курс актуально\SIMZIIS\lab1\lab1\password.cpp(34,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   lab1.vcxproj -> D:\Университет\Университет\3 курс актуально\SIMZIIS\lab1\x64\Debug\lab1.exe
