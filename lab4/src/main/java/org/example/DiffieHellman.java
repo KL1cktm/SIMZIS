@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class DiffieHellman {
 
@@ -21,9 +21,11 @@ public class DiffieHellman {
         int p = 1123;
         int g = 2;
 
-        Random rand = new Random();
-        int a = rand.nextInt(p - 2) + 1;
-        int b = rand.nextInt(p - 2) + 1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите число а: ");
+        int a = scanner.nextInt();
+        System.out.print("Введите число b: ");
+        int b = scanner.nextInt();
 
         int A = modularExponentiation(g, a, p);
         int B = modularExponentiation(g, b, p);
